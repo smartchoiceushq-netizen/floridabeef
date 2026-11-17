@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florida Premium Beef | Artisanal Ranch Meats</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Florida Premium Beef | 100% Grass-Fed & Pastured Meats</title>
 
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._to&&!f.ls)f.push;n.push=n;n.loaded=!0;n.version='2.0';
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
     n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
@@ -26,423 +23,417 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Luxury Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF8F5',
+                        sand: '#F2EDE4',
+                        charcoal: '#1C1917',
+                        burgundy: '#8B2635',
+                        burgundyDark: '#6B1C28',
+                        terracotta: '#B45309',
+                        stoneMuted: '#57534E'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-cream: #FBF9F5;
-            --bg-card: #FFFFFF;
-            --text-dark: #1A1817;
-            --text-muted: #5C5855;
-            --accent-gold: #B8860B;
-            --accent-crimson: #7A1C1C;
-            --accent-crimson-hover: #5E1414;
-            --border-subtle: #E8E2D9;
+        /* Custom subtle shadows and smooth transitions */
+        .luxury-shadow {
+            box-shadow: 0 20px 40px -15px rgba(28, 25, 23, 0.08);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .page-wrapper {
-            max-width: 680px;
-            margin: 0 auto;
-            background: var(--bg-cream);
-            padding: 16px;
-        }
-
-        /* Top Announcement Pill */
-        .announcement-banner {
-            background-color: #1A1817;
-            color: #F4EFE6;
-            text-align: center;
-            padding: 8px 12px;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            margin-bottom: 16px;
-        }
-
-        /* Header Navigation */
-        .site-header {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 16px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-        }
-
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .fpb-logo-box {
-            background-color: #7A1C1C;
-            color: #FFFFFF;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;
-            font-size: 16px;
-            padding: 8px 10px;
-            border-radius: 6px;
-            letter-spacing: 1px;
-        }
-
-        .brand-text h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            font-weight: 700;
-            line-height: 1.1;
-            color: var(--text-dark);
-        }
-
-        .brand-text span {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .harvest-pill {
-            background: rgba(184, 134, 11, 0.1);
-            border: 1px solid rgba(184, 134, 11, 0.25);
-            padding: 6px 12px;
-            border-radius: 30px;
-            font-size: 11px;
-            font-weight: 600;
-            color: #8C6508;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .harvest-pill span {
-            width: 6px;
-            height: 6px;
-            background: #B8860B;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 28px 20px;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .badge-tag {
-            display: inline-block;
-            background: rgba(122, 28, 28, 0.08);
-            color: var(--accent-crimson);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 6px 14px;
-            border-radius: 30px;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 34px;
-            line-height: 1.15;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-
-        h1 span {
-            color: var(--accent-crimson);
-            font-style: italic;
-        }
-
-        .hero-text {
-            font-size: 14.5px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .btn-main {
-            display: block;
-            background-color: var(--accent-crimson);
-            color: #FFFFFF;
-            font-size: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 16px 20px;
-            border-radius: 8px;
-            transition: background 0.2s;
-            box-shadow: 0 8px 20px rgba(122, 28, 28, 0.2);
-            margin-bottom: 14px;
-        }
-
-        .btn-main:hover {
-            background-color: var(--accent-crimson-hover);
-        }
-
-        .secure-note {
-            font-size: 11.5px;
-            color: var(--text-muted);
-        }
-
-        /* Image Showcase */
-        .showcase-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 24px;
-        }
-
-        .showcase-img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .showcase-content {
-            padding: 20px;
-        }
-
-        .showcase-content h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .showcase-content p {
-            font-size: 13.5px;
-            color: var(--text-muted);
-        }
-
-        /* Feature Cards */
-        .content-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 24px 20px;
-            margin-bottom: 20px;
-        }
-
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent-crimson);
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .content-card h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .content-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        .check-list {
-            list-style: none;
-        }
-
-        .check-list li {
-            font-size: 13.5px;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .check-list li::before {
-            content: "✓";
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
-
-        /* Reviews Section */
-        .review-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-
-        .stars {
-            color: #D4AF37;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        .review-text {
-            font-size: 13.5px;
-            font-style: italic;
-            color: var(--text-dark);
-            margin-bottom: 12px;
-        }
-
-        .reviewer-info {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        /* Footer Section */
-        .footer-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 24px 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            font-size: 12px;
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .disclaimer-text {
-            font-size: 11px;
-            color: #7A7570;
-            line-height: 1.5;
+        .btn-glow:hover {
+            box-shadow: 0 12px 24px -6px rgba(139, 38, 53, 0.35);
         }
     </style>
 </head>
-<body>
+<body class="bg-cream text-charcoal font-sans antialiased selection:bg-burgundy selection:text-white">
 
-    <div class="page-wrapper">
-        <div class="announcement-banner">
-            100% Grass-Fed & Finished &bull; Direct Farm-to-Door Delivery
+    <!-- 1. Minimalist Trust Top Bar -->
+    <div class="bg-charcoal text-cream/90 text-xs sm:text-sm py-2.5 px-4 text-center tracking-wide border-b border-stone-800">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                100% Grass-Fed &amp; Finished
+            </span>
+            <span class="hidden sm:inline text-stone-600">&bull;</span>
+            <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Direct Farm-to-Door Delivery
+            </span>
+            <span class="hidden md:inline text-stone-600">&bull;</span>
+            <span class="hidden md:flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                No Antibiotics or Added Hormones
+            </span>
         </div>
-
-        <header class="site-header">
-            <div class="brand-container">
-                <div class="fpb-logo-box">FPB</div>
-                <div class="brand-text">
-                    <h2>Florida Premium Beef</h2>
-                    <span>Artisanal Ranch Meats</span>
-                </div>
-            </div>
-            <div class="harvest-pill">
-                <span></span> Seasonal Harvest Open
-            </div>
-        </header>
-
-        <section class="hero-section">
-            <span class="badge-tag">Ethically Raised in Florida</span>
-            <h1>Experience True Farm-to-Table Excellence: <span>100% Grass-Fed Florida Beef</span></h1>
-            <p class="hero-text">
-                Skip the mystery of supermarket meat aisles. Enjoy nutrient-dense, pasture-raised beef, crate-free pork, and non-GMO chicken raised without antibiotics or added hormones—delivered straight from trusted ranches to your kitchen.
-            </p>
-            <a href="https://afflat3b3.com/trk/lnk/0AFE7501-4657-4F5B-A460-296C71F5E694/?o=33333&c=918277&a=799862&k=0F9C68AAD7B0F2E19B19DF11103FDD60&l=39549" class="btn-main" onclick="fbq('track', 'InitiateCheckout');">Explore Available Beef Boxes &rarr;</a>
-            <div class="secure-note">&#10003; Flash-frozen at peak freshness &bull; Vacuum-sealed &bull; Ships across the U.S.</div>
-        </section>
-
-        <div class="showcase-card">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Hand-Selected Butcher Cuts" class="showcase-img">
-            <div class="showcase-content">
-                <h3>Hand-Selected Butcher Cuts</h3>
-                <p>Rich marbling, natural flavor &amp; traceable origin from pasture to package.</p>
-            </div>
-        </div>
-
-        <div class="content-card">
-            <span class="section-label">Uncompromising Quality</span>
-            <h2>Why Discerning Families Choose Florida Premium Beef</h2>
-            <p>Whether you follow a clean whole-food lifestyle, keto, or carnivore nutrition, the quality of your protein matters. Conventional beef is often finished on grain in industrial facilities, altering its natural fatty acid profile.</p>
-            <p>Florida Premium Beef partners directly with family-operated ranches committed to regenerative grazing. Every cut is aged for tenderness, vacuum-sealed, and shipped frozen to lock in peak flavor.</p>
-            
-            <ul class="check-list">
-                <li>Custom &amp; Curated Box Options (Eight Cow Beef Box &amp; Grassfed Shares)</li>
-                <li>Rich in Natural Omega-3s, CLA, and Essential Micronutrients</li>
-                <li>Insulated Eco-Friendly Cold Packaging Guaranteed to Arrive Frozen</li>
-            </ul>
-        </div>
-
-        <div class="content-card">
-            <span class="section-label">Verified Buyer Feedback</span>
-            <h2>What Home Cooks Are Saying</h2>
-            
-            <div class="review-card">
-                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="review-text">&ldquo;You can immediately taste the difference compared to grocery store steaks. The ribeyes seared beautifully and knowing there are no added hormones gives our family real peace of mind.&rdquo;</div>
-                <div class="reviewer-info">Michael R. &bull; Tampa, FL &bull; Verified Box Buyer</div>
-            </div>
-
-            <div class="review-card">
-                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="review-text">&ldquo;Everything arrived rock-solid frozen and neatly vacuum-packed so it stacked easily in our freezer. Having grass-fed ground beef and pastured chicken on hand saves us so much time.&rdquo;</div>
-                <div class="reviewer-info">Sarah &amp; David K. &bull; Austin, TX &bull; Verified Box Buyer</div>
-            </div>
-
-            <div class="review-card">
-                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="review-text">&ldquo;As someone who prioritizes clean protein, finding a reliable source for 100% grass-fed and finished beef was top priority. The tenderness and flavor are consistently outstanding.&rdquo;</div>
-                <div class="reviewer-info">Elena M. &bull; Orlando, FL &bull; Verified Box Buyer</div>
-            </div>
-        </div>
-
-        <div class="hero-section" style="background: #1A1817; color: #FFFFFF; text-align: center; margin-bottom: 24px;">
-            <span class="badge-tag" style="background: rgba(184, 134, 11, 0.2); color: #E5C568;">Direct Ranch Delivery</span>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; margin-bottom: 12px; color: #FBF9F5;">Reserve Your Farm-Fresh Meat Box Today</h2>
-            <p style="color: #C7C2BC; font-size: 13.5px; margin-bottom: 20px;">Secure your allocation from the current harvest on the official Florida Premium Beef storefront.</p>
-            <a href="https://afflat3b3.com/trk/lnk/0AFE7501-4657-4F5B-A460-296C71F5E694/?o=33333&c=918277&a=799862&k=0F9C68AAD7B0F2E19B19DF11103FDD60&l=39549" class="btn-main" style="background-color: #B8860B; color: #FFFFFF;" onclick="fbq('track', 'InitiateCheckout');">Check Box Availability &amp; Pricing &rarr;</a>
-            <div style="font-size: 11px; color: #9A9590; margin-top: 10px;">Official Storefront Redirect &bull; Secure Checkout &bull; U.S. Nationwide Shipping</div>
-        </div>
-
-        <footer class="footer-box">
-            <div style="font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; margin-bottom: 10px;">Florida Premium Beef | Independent Partner Portal</div>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms &amp; Conditions</a>
-                <a href="#disclosure">Affiliate Disclosure</a>
-                <a href="#contact">Contact Us</a>
-            </div>
-            <div class="disclaimer-text">
-                <p><strong>Advertising &amp; Affiliate Disclosure:</strong> This webpage is an independent promotional resource and pre-purchase guide. When you click on links on this page and make a qualifying purchase on the official Florida Premium Beef website, we may receive an affiliate commission at zero additional cost to you.</p>
-                <p style="margin-top: 8px;"><strong>Platform Disclaimer:</strong> This site is not a part of the Meta&trade; website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta&trade; in any way. META&trade; is a trademark of Meta Platforms, Inc. Product availability, cuts, and pricing are subject to change on the official merchant website.</p>
-                <p style="margin-top: 12px;">&copy; 2026 Independent Gourmet Meat Guide. All Rights Reserved.</p>
-            </div>
-        </footer>
     </div>
 
+    <!-- 2. Clean Brand Header -->
+    <header class="bg-cream/95 backdrop-blur-md sticky top-0 z-40 border-b border-stone-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-4 flex items-center justify-between">
+            <!-- Brand Emblem -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-burgundy text-cream flex items-center justify-center font-serif font-bold text-lg tracking-wider shadow-sm group-hover:bg-burgundyDark transition">
+                    FPB
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-charcoal block leading-none">Florida Premium Beef</span>
+                    <span class="text-[11px] uppercase tracking-widest text-stoneMuted font-medium">Artisanal Ranch Meats</span>
+                </div>
+            </a>
+
+            <!-- Subtle Authentic Badge (Meta-Compliant, No Fake Timers) -->
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-sand text-terracotta border border-amber-900/15">
+                    <span class="w-2 h-2 rounded-full bg-terracotta"></span>
+                    Seasonal Harvest Open
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section -->
+    <section class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Editorial Copy -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <div class="inline-block px-3.5 py-1 rounded-full bg-burgundy/10 text-burgundy text-xs font-bold uppercase tracking-widest">
+                        Ethically Raised in Florida
+                    </div>
+                    
+                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-[52px] font-bold text-charcoal leading-[1.15] tracking-tight">
+                        Experience True Farm-to-Table Excellence: <span class="text-burgundy italic font-semibold">100% Grass-Fed</span> Florida Beef
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-stoneMuted leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        Skip the mystery of supermarket meat aisles. Enjoy nutrient-dense, pasture-raised beef, crate-free pork, and non-GMO chicken raised without antibiotics or added hormones—delivered straight from trusted ranches to your kitchen.
+                    </p>
+
+                    <!-- Primary CTA Button (MaxBounty Tracking Link Integrated) -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="https://afflat3b3.com/trk/lnk/0AFE7501-4657-4F5B-A460-296C71F5E694/?o=33333&c=918277&a=799862&k=0F9C68AAD7B0F2E19B19DF11103FDD60&l=39549" onclick="handleOfferClick(event, this.href)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-burgundy hover:bg-burgundyDark text-white font-semibold text-base sm:text-lg px-8 py-4 rounded-xl transition-all duration-200 btn-glow shadow-md">
+                            <span>Explore Available Beef Boxes</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Subtle Reassurance Note -->
+                    <p class="text-xs text-stoneMuted flex items-center justify-center lg:justify-start gap-2 pt-1">
+                        <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span>Flash-frozen at peak freshness &bull; Vacuum-sealed &bull; Ships across the U.S.</span>
+                    </p>
+                </div>
+
+                <!-- Right High-Res Gourmet Platter Image -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden luxury-shadow border border-stone-200/80 bg-sand aspect-[4/3]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=85" 
+                            onerror="this.src='https://placehold.co/800x600/292524/FAF8F5?text=Florida+Premium+Grass-Fed+Beef'"
+                            alt="Premium Grass-Fed Ribeye Steak Platter" 
+                            class="w-full h-full object-cover object-center transform hover:scale-103 transition duration-700"
+                        >
+                        <!-- Subtle Quality Caption Card -->
+                        <div class="absolute bottom-4 left-4 right-4 sm:right-auto bg-cream/95 backdrop-blur-sm px-4 py-3 rounded-xl border border-stone-200/90 shadow-sm">
+                            <p class="font-serif font-bold text-sm text-charcoal">Hand-Selected Butcher Cuts</p>
+                            <p class="text-xs text-stoneMuted">Rich marbling, natural flavor &amp; traceable origin</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Feature Grid: Why Discerning Families Choose Florida Premium Beef -->
+    <section class="py-16 sm:py-20 bg-sand/70 border-y border-stone-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-terracotta">Uncompromising Quality</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-charcoal mt-2">
+                    Why Discerning Families Choose Florida Premium Beef
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-cream p-8 rounded-2xl border border-stone-200/80 luxury-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-burgundy/10 text-burgundy flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-3">100% Grass-Fed &amp; Finished Beef</h3>
+                    <p class="text-sm text-stoneMuted leading-relaxed">
+                        Our cattle graze freely on lush, sun-drenched Florida pastures from start to finish—never confined to crowded feedlots or fed grain by-products.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-cream p-8 rounded-2xl border border-stone-200/80 luxury-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-terracotta/10 text-terracotta flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-3">Crate-Free Pork &amp; Non-GMO Chicken</h3>
+                    <p class="text-sm text-stoneMuted leading-relaxed">
+                        Beyond beef, curate your box with heritage pastured pork raised crate-free and wholesome, free-range chicken fed a strictly non-GMO diet.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-cream p-8 rounded-2xl border border-stone-200/80 luxury-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-800/10 text-emerald-800 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-charcoal mb-3">Zero Added Hormones or Antibiotics</h3>
+                    <p class="text-sm text-stoneMuted leading-relaxed">
+                        Clean, honest nutrition you can feel confident serving at your dinner table. Never treated with synthetic growth hormones or routine antibiotics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Editorial Split Section: Our Ranching Standard -->
+    <section class="py-16 sm:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                <!-- Left Ranch / Butcher Image -->
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="rounded-2xl overflow-hidden luxury-shadow border border-stone-200/80 aspect-[4/3] bg-sand">
+                        <img 
+                            src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=85" 
+                            onerror="this.src='https://placehold.co/800x600/292524/FAF8F5?text=Artisanal+Butcher+Selection'"
+                            alt="Fresh Raw Grass-Fed Beef Cuts" 
+                            class="w-full h-full object-cover object-center"
+                        >
+                    </div>
+                </div>
+
+                <!-- Right Authentic Story -->
+                <div class="lg:col-span-6 order-1 lg:order-2 space-y-5">
+                    <span class="text-xs font-bold uppercase tracking-widest text-burgundy">Our Ranching Standard</span>
+                    <h2 class="font-serif text-2xl sm:text-4xl font-bold text-charcoal leading-tight">
+                        Crafted for Health-Conscious Kitchens &amp; Serious Steak Lovers
+                    </h2>
+                    <p class="text-stoneMuted text-base leading-relaxed">
+                        Whether you follow a clean whole-food lifestyle, keto, or carnivore nutrition, the quality of your protein matters. Conventional beef is often finished on grain in industrial facilities, altering its natural fatty acid profile.
+                    </p>
+                    <p class="text-stoneMuted text-base leading-relaxed">
+                        Florida Premium Beef partners directly with family-operated ranches committed to regenerative grazing. Every cut—from thick-cut Ribeyes and Filet Mignon to nutrient-rich Ground Beef—is aged for tenderness, vacuum-sealed, and shipped frozen to lock in peak flavor.
+                    </p>
+
+                    <ul class="space-y-3 pt-2 text-sm font-medium text-charcoal">
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-burgundy/15 text-burgundy flex items-center justify-center text-xs font-bold">&#10003;</span>
+                            <span>Custom &amp; Curated Box Options (Eight Cow Beef Box &amp; Grassfed Shares)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-burgundy/15 text-burgundy flex items-center justify-center text-xs font-bold">&#10003;</span>
+                            <span>Rich in Natural Omega-3s, CLA, and Essential Micronutrients</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-5 h-5 rounded-full bg-burgundy/15 text-burgundy flex items-center justify-center text-xs font-bold">&#10003;</span>
+                            <span>Insulated Eco-Friendly Cold Packaging Guaranteed to Arrive Frozen</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Realistic Customer Testimonials (Meta Policy Safe - Grounded & Honest) -->
+    <section class="py-16 sm:py-20 bg-sand/60 border-t border-stone-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-terracotta">Verified Buyer Feedback</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-charcoal mt-2">
+                    What Home Cooks Are Saying
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-sm text-charcoal/90 italic leading-relaxed mb-6">
+                            "You can immediately taste the difference compared to grocery store steaks. The ribeyes seared beautifully and knowing there are no added hormones gives our family real peace of mind."
+                        </p>
+                    </div>
+                    <div class="border-t border-stone-200/70 pt-4">
+                        <p class="font-bold text-sm text-charcoal">Michael R.</p>
+                        <p class="text-xs text-stoneMuted">Tampa, FL &bull; Verified Box Buyer</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-sm text-charcoal/90 italic leading-relaxed mb-6">
+                            "Everything arrived rock-solid frozen and neatly vacuum-packed so it stacked easily in our freezer. Having grass-fed ground beef and pastured chicken on hand saves us so much time."
+                        </p>
+                    </div>
+                    <div class="border-t border-stone-200/70 pt-4">
+                        <p class="font-bold text-sm text-charcoal">Sarah &amp; David K.</p>
+                        <p class="text-xs text-stoneMuted">Austin, TX &bull; Verified Box Buyer</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-cream p-6 sm:p-8 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 text-sm mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="text-sm text-charcoal/90 italic leading-relaxed mb-6">
+                            "As someone who prioritizes clean protein, finding a reliable source for 100% grass-fed and finished beef was top priority. The tenderness and flavor are consistently outstanding."
+                        </p>
+                    </div>
+                    <div class="border-t border-stone-200/70 pt-4">
+                        <p class="font-bold text-sm text-charcoal">Elena M.</p>
+                        <p class="text-xs text-stoneMuted">Orlando, FL &bull; Verified Box Buyer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Final Clean CTA Banner -->
+    <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-charcoal text-cream rounded-3xl p-8 sm:p-14 text-center luxury-shadow relative overflow-hidden">
+            <div class="relative z-10 space-y-6">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-white/10 text-amber-400 text-xs font-semibold uppercase tracking-widest">
+                    Direct Ranch Delivery
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                    Reserve Your Farm-Fresh Meat Box Today
+                </h2>
+                <p class="text-stone-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+                    Browse available beef shares, curated sampler boxes, and custom cuts directly on the official Florida Premium Beef storefront.
+                </p>
+                <div class="pt-3">
+                    <a href="https://afflat3b3.com/trk/lnk/0AFE7501-4657-4F5B-A460-296C71F5E694/?o=33333&c=918277&a=799862&k=0F9C68AAD7B0F2E19B19DF11103FDD60&l=39549" onclick="handleOfferClick(event, this.href)" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-burgundy hover:bg-burgundyDark text-white font-semibold text-base sm:text-lg px-9 py-4 rounded-xl transition-all duration-200 shadow-lg">
+                        <span>Check Box Availability &amp; Pricing</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+                <p class="text-xs text-stone-400 pt-2">
+                    Official Storefront Redirect &bull; Secure Checkout &bull; U.S. Nationwide Shipping
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Meta-Compliant Professional Footer -->
+    <footer class="bg-sand border-t border-stone-200 text-stoneMuted text-xs py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-stone-300/70 pb-6">
+                <div class="font-serif font-bold text-base text-charcoal">
+                    Florida Premium Beef <span class="font-sans font-normal text-stoneMuted">| Independent Partner Portal</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-6 font-medium text-charcoal">
+                    <button onclick="openModal('privacy')" class="hover:text-burgundy underline-offset-4 hover:underline">Privacy Policy</button>
+                    <button onclick="openModal('terms')" class="hover:text-burgundy underline-offset-4 hover:underline">Terms &amp; Conditions</button>
+                    <button onclick="openModal('disclosure')" class="hover:text-burgundy underline-offset-4 hover:underline">Affiliate Disclosure</button>
+                    <a href="mailto:support@floridapremiumbeef-info.com" class="hover:text-burgundy underline-offset-4 hover:underline">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Crucial Meta Ads Compliance Text -->
+            <div class="space-y-2 text-[11px] leading-relaxed text-stone-500 text-center sm:text-left">
+                <p>
+                    <strong>Advertising &amp; Affiliate Disclosure:</strong> This webpage is an independent promotional resource and pre-purchase guide. When you click on links on this page and make a qualifying purchase on the official Florida Premium Beef website, we may receive an affiliate commission at zero additional cost to you.
+                </p>
+                <p>
+                    <strong>Platform Disclaimer:</strong> This site is not a part of the Meta&trade; website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta&trade; in any way. META&trade; is a trademark of Meta Platforms, Inc. Product availability, cuts, and pricing are subject to change on the official merchant website.
+                </p>
+                <p class="pt-2 text-stone-400">
+                    &copy; 2026 Independent Gourmet Meat Guide. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Policy Modal (For Meta Automated Crawler & User Transparency) -->
+    <div id="policyModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50">
+        <div class="bg-cream border border-stone-200 rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between border-b border-stone-200 pb-3">
+                <h3 id="modalTitle" class="font-serif text-xl font-bold text-charcoal">Policy</h3>
+                <button onclick="closeModal()" class="text-stone-500 hover:text-charcoal p-1 text-lg font-bold">&times;</button>
+            </div>
+            <div id="modalBody" class="text-xs sm:text-sm text-stoneMuted leading-relaxed space-y-3 max-h-80 overflow-y-auto">
+                <!-- Content populated via JS -->
+            </div>
+            <div class="pt-2 text-right">
+                <button onclick="closeModal()" class="bg-charcoal text-white text-xs font-semibold px-5 py-2.5 rounded-lg hover:bg-stone-800">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track InitiateCheckout event on Meta Pixel & redirect smoothly to MaxBounty offer
+        function handleOfferClick(e, url) {
+            e.preventDefault();
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout');
+            }
+            setTimeout(function() {
+                window.location.href = url;
+            }, 150);
+        }
+
+        // Meta-Compliant Legal Modals
+        const policyContent = {
+            privacy: {
+                title: "Privacy Policy",
+                body: "<p>We respect your privacy. This promotional landing page does not collect, store, or sell sensitive personal information directly. Standard anonymous analytics and Meta Pixel tracking may be used to measure page performance and ad campaign effectiveness.</p><p>When you click through to the official Florida Premium Beef store, any order details you provide are governed by the merchant's official Privacy Policy and secure checkout encryption.</p>"
+            },
+            terms: {
+                title: "Terms & Conditions",
+                body: "<p>By accessing this informational page, you agree that all product descriptions, cuts, and pricing highlights are provided for general promotional purposes.</p><p>Final purchase terms, shipping schedules, and satisfaction guarantees are fulfilled directly by Florida Premium Beef upon checkout on their official website.</p>"
+            },
+            disclosure: {
+                title: "Affiliate & Advertising Disclosure",
+                body: "<p>This website operates as an independent marketing partner for Florida Premium Beef. Clicking on outbound buttons directs you to the official merchant storefront via a tracked partner link.</p><p>We may earn a referral fee on qualifying orders at no extra cost to you. All trademarks belong to their respective owners.</p>"
+            }
+        };
+
+        function openModal(type) {
+            const modal = document.getElementById('policyModal');
+            document.getElementById('modalTitle').innerText = policyContent[type].title;
+            document.getElementById('modalBody').innerHTML = policyContent[type].body;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('policyModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
 </body>
 </html>
